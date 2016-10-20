@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -66,6 +67,7 @@ public class OutputWeather extends JFrame {
         gbc.gridx = 1;  
 	gbc.gridy = 0;
         location = new JLabel(c.getCity());
+        location.setFont(new Font("Helvetica",Font.PLAIN,20));
         outputPanel.add(location,gbc);
         gbc.gridx = 0;
 	gbc.gridy = 1;
@@ -134,7 +136,7 @@ public class OutputWeather extends JFrame {
         
         this.setContentPane(outputPanel);
         this.setTitle("Weather");
-        this.setSize(400,200);
+        this.setSize(400,400);
         this.setLocationRelativeTo(null);
 	this.setVisible(true);
         

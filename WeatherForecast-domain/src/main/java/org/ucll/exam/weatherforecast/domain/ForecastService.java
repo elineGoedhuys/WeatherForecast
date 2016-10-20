@@ -20,7 +20,7 @@ public class ForecastService {
 
     public Observation getCityForecast(Observation city) throws Exception {
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://api.wunderground.com/api/38f8b91ec09b4d8c/forecast/q/BE/Leuven.json");
+        WebTarget target = client.target(url+"/"+city.getCountryName()+"/"+city.getCityName()+".json");
         ObjectMapper objectMapper = new ObjectMapper();
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         Observation cityresp = new Observation(city.getCountryName(), city.getCityName());
